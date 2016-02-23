@@ -1,0 +1,20 @@
+#include<reg52.h>
+
+#define uchar unsigned char
+#define uint unsigned int
+uchar tabel1[]={0xfe,0xfd,0xfb,0xf7,0xef,0xdf,0xbf,0x7f};
+uchar tabel2[]={0x00,0x00,0x3e,0x41,0x41,0x41,0x3e,0x00};
+void delay(uint a)
+{
+	while(a--);
+}
+void main()
+{
+	uint i;
+	for(i=0;i<8;i++)
+	{
+		P0=tabel1[i];
+		P1=tabel2[i];
+		delay(10);
+	}	
+}
